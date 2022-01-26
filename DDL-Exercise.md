@@ -14,7 +14,7 @@ Question:
 Consider an application which is being developed for a ‘Used Car seller’. For storing various details related to the cars and owners, create the tables according to the schemas given below;  
 
 > CAR(Car_Reg_No, Brand, Model, Variant, Model_Year, Color, Year_Of_Purchase, Kilometers)
-> OWNER(Owner_ID, Owner_Name, Owner_Phone, License_Number)
+> OWNER(Owner_ID, Owner_Name, Owner_Phone, License_Number)  
 > OWNER_CAR(Owner_ID, Car_Reg_No, Price)
 
 ## I - Consider the following as important components while creating the tables;
