@@ -1,15 +1,24 @@
 # CREATE TABLE / ALTER TABLE 
 
-How to create a table? / How to alter the structure of a table? / How to add constraints? / How to remove constraints? / What is table definition? / How to add a column to an existing table?
-Create Table / Alter Table Exercises
-Question:
-Consider an application which is being developed for a ‘Used Car seller’. For storing various details related to the cars and owners, create the tables according to the schemas given below;
-CAR(Car_Reg_No, Brand, Model, Variant, Model_Year, Color, Year_Of_Purchase, Kilometers)
-OWNER(Owner_ID, Owner_Name, Owner_Phone, License_Number)
-OWNER_CAR(Owner_ID, Car_Reg_No, Price)
+> How to create a table?
+> How to alter the structure of a table?
+> How to add constraints?
+> How to remove constraints? 
+> What is table definition? 
+> How to add a column to an existing table?
+
+### Create Table / Alter Table Exercises  
+
+Question:  
+
+Consider an application which is being developed for a ‘Used Car seller’. For storing various details related to the cars and owners, create the tables according to the schemas given below;  
+
+> CAR(Car_Reg_No, Brand, Model, Variant, Model_Year, Color, Year_Of_Purchase, Kilometers)
+> OWNER(Owner_ID, Owner_Name, Owner_Phone, License_Number)
+> OWNER_CAR(Owner_ID, Car_Reg_No, Price)
 
 ## I - Consider the following as important components while creating the tables;
----
+
 1. The columns that are underlined are Primary keys  
 2. All columns must contain some values.  
 3. Choose the appropriate data types which would match the most for all the attributes.  
