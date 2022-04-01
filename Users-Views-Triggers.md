@@ -6,6 +6,12 @@
 4.1. [Creating a role](#creating-a-role)   
 4.2. [Choosing between different roles](#choosing-between-different-roles)  
 4.3. [Roles and Views](#roles-and-views)  
+5. [Transactions](#transactions)  
+5.1. [Transaction Example](#sample-transaction-account-debit-and-credit)  
+5.2. [ACID Compliance](#acid-compliance) 
+5.3. [MariaDB vs ORACLE](#mariadb-vs-oracle)  
+
+
 # Introduction
 
  > An \<authorization identifier> identifies a set of privileges. An \<authorization identifier> can be either a \<user identifier> or a \<role name>. A \<user identifier> represent a user of the database system. The mapping of \<user identifier>s to operating system users is implementation-dependent. A <role name> represents a role.
@@ -71,8 +77,9 @@ The view contains no actual data but rather derives what it shows from the table
 
 For example, a base table of all employee data may have several columns and numerous rows of information. If you want a certain set of users to see only specific columns, then you can create a view of that table, containing only the allowable columns. You can then grant other users access to the new view, while disallowing access to the base table.
 
-The following figure shows an example of a view called staff derived from the base table employees. Notice that the view shows only five of the columns in the base table.
-[[IMAGE]]
+The following figure shows an example of a view called staff derived from the base table employees. Notice that the view shows only five of the columns in the base table.  
+
+![Views Example](./images/viewexample.gif "a title")
 
 # USERS
 > A user is a database level security principal. 
@@ -116,6 +123,8 @@ When a user sets a role, he, in a sense, has two identities with two associated 
 > An SQL-transaction (transaction) is a sequence of executions of SQL-statements that is atomic with respect to recovery. That is to say: either the execution result is completely successful, or it has no effect on any SQL-schemas or SQL-data.  
 > *The SQL standard*
 
+![TransactionsIntroduction](./images/DBMSTransaction.png)  
+
 ### Why do we need transactions?
 A database is a shared resource accessed. It is used by many users and processes concurrently. For example, the banking system, railway, and air reservations systems, stock market monitoring, supermarket inventory, and checkouts, etc.
 
@@ -135,7 +144,7 @@ A database must allow for two situations. If all three SQL statements maintain t
 
 The following graphic illustrates a banking transaction. The first statement subtracts $500 from savings account 3209. The second statement adds $500 to checking account 3208. The third statement inserts a record of the transfer into the journal table. The final statement commits the transaction.
 
-[[IMAGE]]
+![Transactions](./images/transactions.gif)
 
 ### Structure of a Transaction
 A database transaction consists of one or more statements. Specifically, a transaction consists of one of the following:
@@ -189,10 +198,10 @@ A major difference between *MariaDB* and *Oracle* is the Transaction Control. *M
 
 In *Oracle*, each new database connection is treated as a new transaction. Until the transaction committed, the transaction can be rolled back, and all the changes are made on the system memory. Because of that, in the rollback, all the changes in the statement can be undone. After the commit is done, essentially the next command initiates a new transaction. This helps to control errors easily and provide flexibility.
 
-### What is ACID Compliance?
+### ACID Compliance
 The presence of four properties — atomicity, consistency, isolation and durability — can ensure that a database transaction is completed in a timely manner. When databases possess these properties, they are said to be ACID-compliant. 
 
-## ACID Properties
+#### ACID Properties
 
 The 4 ACID properties of a database:  
 **Atomicity**: Database transactions, like atoms, can be broken down into smaller parts. When it comes to your database, atomicity refers to the integrity of the entire database transaction, not just a component of it. In other words, if one part of a transaction doesn’t work like it’s supposed to, the other will fail as a result—and vice versa. For example, if you’re shopping on an e-commerce site, you must have an item in your cart in order to pay for it. What you can’t do is pay for something that’s not in your cart. (You can add something into your cart and not pay for it, but that database transaction won’t be complete, and thus not ‘atomic’, until you pay for it).
