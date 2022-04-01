@@ -8,7 +8,7 @@
 4.3. [Roles and Views](#roles-and-views)  
 5. [Transactions](#transactions)  
 5.1. [Transaction Example](#sample-transaction-account-debit-and-credit)  
-5.2. [ACID Compliance](#acid-compliance) 
+5.2. [ACID Compliance](#acid-compliance)  
 5.3. [MariaDB vs ORACLE](#mariadb-vs-oracle)  
 
 
