@@ -10,6 +10,7 @@
 5.1. [Transaction Example](#sample-transaction-account-debit-and-credit)  
 5.2. [ACID Compliance](#acid-compliance)  
 5.3. [MariaDB vs ORACLE](#mariadb-vs-oracle)  
+6. [Triggers](#triggers)
 
 
 # Introduction
@@ -83,6 +84,8 @@ The following figure shows an example of a view called staff derived from the ba
 
 # USERS
 > A user is a database level security principal. 
+ >
+ > *The SQL standard*  
 
 Logins must be mapped to a database user to connect to a database. A login can be mapped to different databases as different users but can only be mapped as one user in each database.
 
@@ -99,7 +102,9 @@ CREATE USER viviana@'%';
 
 # ROLES <a name="roles"></a>
 > A role, identified by a *role name*, is a set of privileges defined by the union of the privileges defined by the privilege descriptors whose grantee is that *role name* and the sets of privileges of the *role name*s defined by the role authorization descriptors whose grantee is the first *role name*.  
-A role may be granted to *authorization identifie*s with a *grant role statement*. No cycles of role grants are allowed.
+> A role may be granted to *authorization identifie*s with a *grant role statement*. No cycles of role grants are allowed.
+ >
+ > *The SQL standard*  
 
 Roles allow DBAs to manage the multiple permission options easily in complex enviroments. A role is a collection of privileges together that can be assigned to a determined user in just one step. It also simplifies the process of revocation or modification privilege for groups of users. 
 
@@ -203,7 +208,8 @@ The presence of four properties — atomicity, consistency, isolation and durabi
 
 #### ACID Properties
 
-The 4 ACID properties of a database:  
+The 4 ACID properties of a database: 
+
 **Atomicity**: Database transactions, like atoms, can be broken down into smaller parts. When it comes to your database, atomicity refers to the integrity of the entire database transaction, not just a component of it. In other words, if one part of a transaction doesn’t work like it’s supposed to, the other will fail as a result—and vice versa. For example, if you’re shopping on an e-commerce site, you must have an item in your cart in order to pay for it. What you can’t do is pay for something that’s not in your cart. (You can add something into your cart and not pay for it, but that database transaction won’t be complete, and thus not ‘atomic’, until you pay for it).
 
 **Consistency**: For any database to operate as it’s intended to operate, it must follow the appropriate data validation rules. Thus, consistency means that only data which follows those rules is permitted to be written to the database. If a transaction occurs and results in data that does not follow the rules of the database, it will be ‘rolled back’ to a previous iteration of itself (or ‘state’) which complies with the rules. On the other hand, following a successful transaction, new data will be added to the database and the resulting state will be consistent with existing rules.
@@ -213,28 +219,67 @@ The 4 ACID properties of a database:
 **Durability**: All technology fails from time to time… the goal is to make those failures invisible to the end-user. In databases that possess durability, data is saved once a transaction is completed, even if a power outage or system failure occurs. Imagine you’re buying in-demand concert tickets on a site similar to Ticketmaster.com. Right when tickets go on sale, you’re ready to make a purchase. After being stuck in the digital waiting room for some time, you’re finally able to add those tickets to your cart. You then make the purchase and get your confirmation. However if that database lacks durability, even after your ticket purchase was confirmed, if the database suffers a failure incident your transaction would still be lost! As you might expect, this is a really bad thing to happen for an online e-commerce site, so transaction durability is a must-have.
 
 ## Isolation levels
-Isolation Levels
+
 The following sections describe how MariaDB supports the different transaction levels.
 
-READ UNCOMMITTED
+READ UNCOMMITTED  
 SELECT statements are performed in a non-locking fashion, but a possible earlier version of a row might be used. Thus, using this isolation level, such reads are not consistent. This is also called a "dirty read." Otherwise, this isolation level works like READ COMMITTED.
 
-READ COMMITTED
+READ COMMITTED  
 A somewhat Oracle-like isolation level with respect to consistent (non-locking) reads: Each consistent read, even within the same transaction, sets and reads its own fresh snapshot. See http://dev.mysql.com/doc/refman/en/innodb-consistent-read.html.
 
 For locking reads (SELECT with FOR UPDATE or LOCK IN SHARE MODE), InnoDB locks only index records, not the gaps before them, and thus allows the free insertion of new records next to locked records. For UPDATE and DELETE statements, locking depends on whether the statement uses a unique index with a unique search condition (such as WHERE id = 100), or a range-type search condition (such as WHERE id > 100). For a unique index with a unique search condition, InnoDB locks only the index record found, not the gap before it. For range-type searches, InnoDB locks the index range scanned, using gap locks or next-key (gap plus index-record) locks to block insertions by other sessions into the gaps covered by the range. This is necessary because "phantom rows" must be blocked for MySQL replication and recovery to work.
 
 Note: If the READ COMMITTED isolation level is used or the innodb_locks_unsafe_for_binlog system variable is enabled, there is no InnoDB gap locking except for foreign-key constraint checking and duplicate-key checking. Also, record locks for non-matching rows are released after MariaDB has evaluated the WHERE condition.If you use READ COMMITTED or enable innodb_locks_unsafe_for_binlog, you must use row-based binary logging.
-
-REPEATABLE READ
+   
+REPEATABLE READ  
 This is the default isolation level for InnoDB. For consistent reads, there is an important difference from the READ COMMITTED isolation level: All consistent reads within the same transaction read the snapshot established by the first read. This convention means that if you issue several plain (non-locking) SELECT statements within the same transaction, these SELECT statements are consistent also with respect to each other. See http://dev.mysql.com/doc/refman/en/innodb-consistent-read.html.
 
 For locking reads (SELECT with FOR UPDATE or LOCK IN SHARE MODE), UPDATE, and DELETE statements, locking depends on whether the statement uses a unique index with a unique search condition, or a range-type search condition. For a unique index with a unique search condition, InnoDB locks only the index record found, not the gap before it. For other search conditions, InnoDB locks the index range scanned, using gap locks or next-key (gap plus index-record) locks to block insertions by other sessions into the gaps covered by the range.
 
 This is the minimum isolation level for non-distributed XA transactions.
 
-SERIALIZABLE
+SERIALIZABLE  
 This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SELECT statements to SELECT ... LOCK IN SHARE MODE if autocommit is disabled. If autocommit is enabled, the SELECT is its own transaction. It therefore is known to be read only and can be serialized if performed as a consistent (non-locking) read and need not block for other transactions. (This means that to force a plain SELECT to block if other transactions have modified the selected rows, you should disable autocommit.)
 
 Distributed XA transactions should always use this isolation level.
 
+## TRIGGERS
+
+>An SQL Trigger is a named chain reaction that you set off with an SQL data change statement: it specifies a set of SQL statements that are to be executed (either once for each row or once for the whole triggering INSERT, DELETE or UPDATE statement) either before or after rows are inserted into a Table, rows are deleted from a Table, or one or more Columns are updated in rows of a Table. 
+
+*MariaDB* supports the following types of triggers:
+
+ * The insert trigger is automatically executed when an insert statement adds a new row to a table.
+ * The update trigger is automatically fired when an update statement modifies the data on a table.
+ * The delete trigger is automatically invoked when a delete statement removes one or more rows from a table.
+
+
+
+### Triggers Examples
+
+```
+CREATE TRIGGER Trigger_1
+   AFTER UPDATE ON Table_1
+      INSERT INTO Log_table VALUES ('updated Table_1');
+```
+
+```
+CREATE TRIGGER customer_info_before_update
+BEFORE UPDATE
+ON customer_info FOR EACH ROW
+BEGIN
+DECLARE User_name varchar(70);
+-- Find username to execute the INSERT operation into table
+SELECT USER() INTO User_name;
+-- Insert record into audit table
+INSERT INTO customer_info
+( customer_id,
+Customer_birthday_date,
+updated_by)
+VALUES
+( NEW.customer_id,
+SYSDATE(),
+User_name );
+END; 
+```
