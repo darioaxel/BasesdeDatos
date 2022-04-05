@@ -11,6 +11,8 @@
 5.2. [ACID Compliance](#acid-compliance)  
 5.3. [MariaDB vs ORACLE](#mariadb-vs-oracle)  
 6. [Triggers](#triggers)
+7. [User Defined Functions](#) 
+
 
 
 # Introduction
@@ -254,9 +256,97 @@ Distributed XA transactions should always use this isolation level.
  * The update trigger is automatically fired when an update statement modifies the data on a table.
  * The delete trigger is automatically invoked when a delete statement removes one or more rows from a table.
 
+The *create trigger* statement allows you to create a new trigger in a database. The following code illustrates the basic syntax of the create trigger statement:
+```
+create trigger trigger_name
+{before | after} {insert | update | delete }
+on table_name for each row
+trigger_body;
+```
 
+In this syntax:
 
-### Triggers Examples
+ * First, specify the name of the trigger that you want to create after the create trigger keywords. The trigger name must be distinct within a database.
+ * Second, specify the action time that the trigger is invoked. The action time can be either before or after a row is modified
+ * Third, specify an event that activates the trigger. MariaDB supports insert, update, and delete events.
+ * Fourth, indicate the name of the table to which the trigger belongs after the on keyword.
+ * Finally, specify a statement or statements to execute when the trigger is invoked.
+
+If you want to execute multiple statements, you place them within the BEGIN END compound statement.
+
+Inside the trigger body, you can access values of columns that are affected by an insert, update or delete statement. The old and new modifiers allow you to access values of the columns before and after the triggering event.
+
+### Triggers Example 1
+---
+
+First, create a copy of the country_stats table:
+```
+create table country_reports
+select * 
+from country_stats;
+
+```  
+Second, create a table called population_logs to log the changes in the population column of the country_reports table:
+```
+create table population_logs(
+    log_id int auto_increment,
+    country_id int not null,
+    year int not null,
+    old_population int not null,
+    new_population int not null,
+    updated_at timestamp default current_timestamp,
+    primary key(log_id)
+);
+```
+
+Third, create a trigger invoked before a change is made to the country_reports table.
+```
+create trigger before_country_reports_update 
+    before update on country_reports
+    for each row
+    insert into population_logs(
+        country_id, 
+        year, 
+        old_population, 
+        new_population
+    )
+    values(
+        old.country_id,
+        old.year,
+        old.population,
+        new.population
+    );
+```
+Fourth, select data from the country id 100 and in the year of 2018 from country_reports table:
+```
+select * 
+from country_reports
+where 
+    country_id = 100 and 
+    year = 2018;
+```
+
+MariaDB Create Trigger - before update
+Fifth, update the population for country id 100 in the year of 2018:
+```
+update 
+    country_reports
+set 
+    population = 1352617399
+where 
+    country_id = 100 and 
+    year = 2018;
+```
+
+Sixth, query data from the population_logs table:
+```
+select * 
+from population_logs;
+```  
+
+### Triggers Examples 2
+----  
+
 
 ```
 CREATE TRIGGER Trigger_1
@@ -283,3 +373,61 @@ SYSDATE(),
 User_name );
 END; 
 ```
+Let's see the output:
+
+![Triggers](./images/MariaDBTriggers.png)
+
+As seen clearly from the output, the trigger was automatically fired and inserted a new row into the population_logs table.
+
+## User Defined Functions
+
+
+![UserDefinedFunctions](./images/WhyUseFunctions.png)
+
+User defined functions (UDF) are just like built in functions except that you have to define the stored function yourself. Once a stored function has been created, it can be used in SQL statements just like any other function. The basic syntax for creating a stored function is as shown below
+```
+CREATE FUNCTION sf_name ([parameter(s)])
+   RETURNS data type
+   DETERMINISTIC
+   STATEMENTS
+HERE
+```
+
+* First, we need to specify the name of the user-defined function that you want to create after the CREATE FUNCTION statement.
+*CREATE FUNCTION sf_name ([parameter(s)])* is mandatory and tells the dbs server to create a function named `sf_name’ with optional parameters defined in the parenthesis.
+
+* Second, list all the input parameters of the user-defined function inside the parentheses followed by the function name. By default, all the parameters are IN parameters. The point that you need to remember is, you cannot specify IN, OUT or INOUT modifiers to the parameters in *MariaDB/MySQL*.
+
+* Third, specify the data type of the return value in the RETURNS statement, which can be any valid *MariaDB/MySQL* data type. *RETURNS data type* is mandatory.
+
+* Fourth, specify if the function is deterministic or not using the DETERMINISTIC keyword. It is optional. If we don’t specify DETERMINISTIC or NOT DETERMINISTIC, by default. *MariaDB/MySQL* uses the NOT DETERMINISTIC option. A deterministic function in *MariaDB/MySQL* always returns the same result for the same input parameters whereas a non-deterministic function returns different results for the same input parameters.
+
+* Fifth, write the code in the body of the user-defined function within the BEGIN & END block. Inside the body section, you need to specify at least one RETURN statement. The RETURN statement returns a value to the calling programs. Whenever the RETURN statement is reached, the execution of the stored function is terminated immediately.
+“STATEMENTS” is the procedural code that the function executes.
+Let’s now look at a practical example that implements a built in function. Suppose we want to know which rented movies are past the return date. We can create a stored function that accepts the return date as the parameter and then compares it with the current date in *MariaDB/MySQL*. If the current date is less than the return movie date, then we return “No” else we return “Yes”. The script shown below helps us to achieve that.
+
+Let’s now look at a practical example that implements a built in function. Suppose we want to know which rented movies are past the return date. We can create a stored function that accepts the return date as the parameter and then compares it with the current date in *MariaDB/MySQL*. If the current date is less than the return movie date, then we return “No” else we return “Yes”. The script shown below helps us to achieve that.
+
+```
+CREATE FUNCTION sf_past_movie_return_date (return_date DATE)
+  RETURNS VARCHAR(3)
+   DETERMINISTIC
+    BEGIN
+     DECLARE sf_value VARCHAR(3);
+        IF curdate() > return_date
+            THEN SET sf_value = 'Yes';
+        ELSEIF  curdate() <= return_date
+            THEN SET sf_value = 'No';
+        END IF;
+     RETURN sf_value;
+    END
+```
+Executing the above script created the stored function `sf_past_movie_return_date`.
+
+Let’s now test our stored function.
+```
+SELECT `movie_id`,`membership_number`,`return_date`,CURDATE() ,sf_past_movie_return_date(`return_date`)  FROM `movierentals`;
+```
+Executing the above script in MySQL workbench against the myflixdb gives us the following results.
+
+
