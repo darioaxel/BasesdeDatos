@@ -122,6 +122,26 @@ In order to know which role you are, **CURRENT_ROLE** function returns the curre
 
 From the application side, you should be able to set the role (or use the default) before querying to make this work, so in old applications, it could be complex to implement.
 
+### List of role capabilities
+The following list summarizes role-management capabilities provided by *MariaDB/MySQL*:
+
+```
+CREATE ROLE and DROP ROLE create and remove roles.
+
+GRANT and REVOKE assign privileges to revoke privileges from user accounts and roles.
+
+SHOW GRANTS displays privilege and role assignments for user accounts and roles.
+
+SET DEFAULT ROLE specifies which account roles are active by default.
+
+SET ROLE changes the active roles within the current session.
+
+The CURRENT_ROLE() function displays the active roles within the current session.
+```
+
+
+
+
 ### Roles and Views 
 
 When a user sets a role, he, in a sense, has two identities with two associated sets of privileges. But a view (or a stored routine) can have only one definer. So, when a view (or a stored routine) is created with the **SQL SECURITY DEFINER**, one can specify whether the definer should be **CURRENT_USER** (and the view will have none of the privileges of the user's role) or **CURRENT_ROLE** (in this case, the view will use role's privileges, but none of the user's privileges). As a result, sometimes one can create a view that is impossible to use.
@@ -343,41 +363,39 @@ Sixth, query data from the population_logs table:
 select * 
 from population_logs;
 ```  
+![Triggers](./images/MariaDBTriggers.png)
+
+As seen clearly from the output, the trigger was automatically fired and inserted a new row into the population_logs table.
 
 ### Triggers Examples 2
 ----  
 
-
 ```
-CREATE TRIGGER Trigger_1
-   AFTER UPDATE ON Table_1
+CREATE TRIGGER Trigger_1  
+   AFTER UPDATE ON Table_1  
       INSERT INTO Log_table VALUES ('updated Table_1');
 ```
 
 ```
-CREATE TRIGGER customer_info_before_update
-BEFORE UPDATE
+CREATE TRIGGER customer_info_before_update  
+BEFORE UPDATE  
 ON customer_info FOR EACH ROW
 BEGIN
-DECLARE User_name varchar(70);
--- Find username to execute the INSERT operation into table
-SELECT USER() INTO User_name;
+DECLARE User_name varchar(70);  
+
+-- Find username to execute the INSERT operation into table  
+SELECT USER() INTO User_name;  
+
 -- Insert record into audit table
 INSERT INTO customer_info
-( customer_id,
-Customer_birthday_date,
-updated_by)
+    ( customer_id, Customer_birthday_date, updated_by)
 VALUES
-( NEW.customer_id,
-SYSDATE(),
-User_name );
+    ( NEW.customer_id, SYSDATE(), User_name );
 END; 
 ```
 Let's see the output:
 
-![Triggers](./images/MariaDBTriggers.png)
 
-As seen clearly from the output, the trigger was automatically fired and inserted a new row into the population_logs table.
 
 ## User Defined Functions
 
