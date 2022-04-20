@@ -46,9 +46,9 @@
 
 | Item | Topic | Description | Unacceptable | Basic | Advanced |
 |------|-------|-------------|--------------|-------|----------|
-|  1   | Cover, Header & Footprint       |             |              |       |          |
-|  2   |  Titles & Index     |             |              |       |          |
-|  3   |  Quotes use     |             |              |       |          |
+|  1   |Cover, Header & Footprint       |             |              |       |          |
+|  2   |Titles & Index     |             |              |       |          |
+|  3   |Quotes use | Quoting from the bibliography using APA style    | Wrong quote use, without APA style, from documents not included in the bibliography|Use of the APA style correctly, may not be perfect or any quotes style wrong | Extended use of quotes as help to introduce the theory. No style errors. |
 |  4   |Misspellings | Use of the orthographic tools, use of a clear & professional writing style |Several spelling errors|No misspellings. Minor punctuation mistakes. Short and clear sentences | No errors, good use of punctuation.Short and clear sentences. |
 |  5   |   Document structure    |             |              |       |          |
 |  6   |   Document format (italics, bold, lists, text size ...)    |             |              |       |          |
