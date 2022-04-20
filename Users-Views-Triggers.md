@@ -140,8 +140,6 @@ The CURRENT_ROLE() function displays the active roles within the current session
 ```
 
 
-
-
 ### Roles and Views 
 
 When a user sets a role, he, in a sense, has two identities with two associated sets of privileges. But a view (or a stored routine) can have only one definer. So, when a view (or a stored routine) is created with the **SQL SECURITY DEFINER**, one can specify whether the definer should be **CURRENT_USER** (and the view will have none of the privileges of the user's role) or **CURRENT_ROLE** (in this case, the view will use role's privileges, but none of the user's privileges). As a result, sometimes one can create a view that is impossible to use.
@@ -265,6 +263,71 @@ SERIALIZABLE
 This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SELECT statements to SELECT ... LOCK IN SHARE MODE if autocommit is disabled. If autocommit is enabled, the SELECT is its own transaction. It therefore is known to be read only and can be serialized if performed as a consistent (non-locking) read and need not block for other transactions. (This means that to force a plain SELECT to block if other transactions have modified the selected rows, you should disable autocommit.)
 
 Distributed XA transactions should always use this isolation level.
+
+## PROCEDURES
+
+A stored procedure is a set of SQL statements that is stored associated with a database. It is an object that is created with the CREATE PROCEDURE statement and invoked with the CALL statement. A procedure can have zero or many input parameters and zero or many output parameters.
+
+### SYNTAX
+
+### DELIMITER
+To define a stored procedure it is necessary to temporarily modify the separator character used to delimit SQL statements.
+
+The default separator character used in SQL is the semicolon (;). In the examples we are going to perform in this unit we are going to use the characters $$ to delimit SQL statements, but it is possible to use any other character.
+
+Example:
+
+In this example we are setting the $$ characters as the separators between SQL statements.
+```
+DELIMITER $$
+In this example we configure again that the separator character is the semicolon.
+
+DELIMITER ;
+```
+### Input, output and input/output parameters
+In stored procedures we can have three types of parameters:
+
+> Input: These are indicated by putting the reserved word IN in front of the parameter name. These parameters cannot change their value within the procedure, that is, when the procedure ends these parameters will have the same value they had when the procedure call was made. In programming it would be equivalent to passing by value of a parameter.
+
+> Output: They are indicated by placing the reserved word OUT in front of the parameter name. These parameters change their value within the procedure. When the call to the procedure is made, they start with an initial value and when the execution of the procedure ends, they can end with a different value. In programming it would be equivalent to the passing by reference of a parameter.
+> Input/Output: It is a combination of IN and OUT types. These parameters are indicated by putting the reserved word IN/OUT in front of the parameter name.
+Example 1:
+
+In this example, the header of a procedure named list_products is shown which has only the parameter gamma which is input (IN).
+```
+CREATE PROCEDURE list_products(IN range VARCHAR(50))
+```
+
+Example 2:
+
+Here is the header of a procedure called count_products that has the input range parameter (IN) and the output total parameter (OUT).
+
+CREATE PROCEDURE count_products(IN range VARCHAR(50), OUT total INT UNSIGNED)
+
+#### Example of a procedure with input parameters
+
+Write a procedure called list_products that receives as input the name of the range and displays a list of all products that exist within that range. This procedure does not return any output parameters, it just displays the list of products.
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS listar_productos$$
+CREATE PROCEDURE list_products(IN gamma VARCHAR(50))
+BEGIN
+  SELECT *
+  FROM product
+  WHERE product.range = range;
+END
+$$
+1.1.5 Calling procedures with CALL
+The reserved word CALL is used to call a stored procedure.
+
+Example:
+
+DELIMITER ;
+CALL list_products('Tools');
+SELECT * FROM product;
+1.1.6 Examples of stored procedures with output parameters
+
+Translated with www.DeepL.com/Translator (free version)
 
 ## TRIGGERS
 

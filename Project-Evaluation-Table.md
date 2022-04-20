@@ -3,6 +3,8 @@
 ## Presentation and documentation format quality
 
 ## Project quality
+
+
 ### Theory (State of the art, etc)
  * Does the project include a bibliography? 
  * Are all the bibliography entries used and referenced in the text?
@@ -39,3 +41,37 @@
  * For each scenario/view the users would need, are some of the queries created incluing also an example of its results?
 
 ### USERS & ROLE
+
+# a. Documentation Format Rubric
+
+| Item | Topic | Description | Unacceptable | Basic | Advanced |
+|------|-------|-------------|--------------|-------|----------|
+|  1   | Cover, Header & Footprint       |             |              |       |          |
+|  2   |  Titles & Index     |             |              |       |          |
+|  3   |  Quotes use     |             |              |       |          |
+|  4   | Misspellings       |             |              |       |          |
+|  5   |   Document structure    |             |              |       |          |
+|  6   |   Document format (italics, bold, lists, text size ...)    |             |              |       |          |
+|  7   |   Bibliography    |             |              |       |          |
+|  8   |  Plagiarism     |             |              |       |
+|
+
+
+
+
+
+# b. Project Documentation  
+
+| Item | Topic | Description | Unacceptable | Basic | Advanced |
+|------|-------|-------------|--------------|-------|----------|
+|      |       |             |              |       |          |
+|      |       |             |              |       |          |
+|      |       |             |              |       |          |
+
+# c. Presentation Rubric 
+
+| Item | Topic | Description | Unacceptable | Basic | Advanced |
+|------|-------|-------------|--------------|-------|----------|
+|      |       |             |              |       |          |
+|      |       |             |              |       |          |
+|      |       |             |              |       |          |
