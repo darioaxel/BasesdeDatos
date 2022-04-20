@@ -42,7 +42,17 @@
 
 ### USERS & ROLE
 
-# a. Documentation Format Rubric
+# RUBRICS
+
+The following rubrics are associated to the values from 0 to 4 on:  
+
+| Mark | Description
+|------|-------|  
+| 0 | Unacceptable|  
+| 1, 2 | Basic use|
+| 3, 4| Advanced use|
+
+## a. Documentation Format Rubric
 
 | Item | Topic | Description | Unacceptable | Basic | Advanced |
 |------|-------|-------------|--------------|-------|----------|
@@ -60,7 +70,7 @@
 
 
 
-# b. Project Documentation  
+## b. Project Documentation  
 
 | Item | Topic | Description | Unacceptable | Basic | Advanced |
 |------|-------|-------------|--------------|-------|----------|
@@ -68,7 +78,7 @@
 |      |       |             |              |       |          |
 |      |       |             |              |       |          |
 
-# c. Presentation Rubric 
+## c. Presentation Rubric 
 
 | Item | Topic | Description | Unacceptable | Basic | Advanced |
 |------|-------|-------------|--------------|-------|----------|
