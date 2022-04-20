@@ -1,14 +1,16 @@
 # Project Evaluation
 
-1. [Presentation and Documentation](#presentation-and-documentation-format-quality)
+1. [Documentation Format](#documentation-format)
 2. [Project Quality](#project-quality)
+3. [Rubrics](#rubrics)
 
-## Presentation and Documentation format quality
-
-## Project Quality
+# 1. Documentation Format
 
 
-### Theory (State of the art, etc)
+
+# 2. Project Quality
+
+## 2.1 Theory (State of the art, etc)
  * Does the project include a bibliography? 
  * Are all the bibliography entries used and referenced in the text?
  * Is the state of the art well referenced?
@@ -17,18 +19,18 @@
  *  
 
 
-### DBs problems and solutions
+## 2.2 DBs problems and solutions
  * Do the project include a list of problems the company needed to solve in the past?
  * Do the project specify how the problems could be solved by using a DB?
  * Is the solution to the problems based in the characteristics that a RDB have?
  * 
 
 
-### E-R Diagram  
+## 2.3 E-R Diagram  
  * Are the entities of the diagram enough explained?
  * Is the E/R Diagram correct?
 
-### E-R to TABLES
+## 2.4  E-R to TABLES
 
 * Are all the tables of the project normalized?  
 * Does the documentation include examples of how to transform relation into tables?
@@ -59,8 +61,8 @@ The following rubrics are associated to the values from 0 to 4 on:
 
 | Item | Topic | Description | Unacceptable | Basic | Advanced |
 |------|-------|-------------|--------------|-------|----------|
-|  1   |Cover, Header & Footprint       |             |              |       |          |
-|  2   |Titles & Index     |             |              |       |          |
+|  1   |Cover, Header & Footprint | Basic documentation style for a project | Poor cover, no page number at the foot, no header with the title of the project, no student names, too big header or footers, ... | There is a cover with a basic format, the header and footers are fine but basic also  | Beautifull cover with professional design, headers and footers also professional |
+|  2   |Titles & Index |             |              |       |          |
 |  3   |Quotes use | Quoting from the bibliography using APA style    | Wrong quote use, without APA style, from documents not included in the bibliography|Use of the APA style correctly, may not be perfect or any quotes style wrong | Extended use of quotes as help to introduce the theory. No style errors. |
 |  4   |Misspellings | Use of the orthographic tools, use of a clear & professional writing style |Several spelling errors|No misspellings. Minor punctuation mistakes. Short and clear sentences | No errors, good use of punctuation.Short and clear sentences. |
 |  5   |   Document structure    |             |              |       |          |
