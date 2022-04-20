@@ -49,7 +49,7 @@
 |  1   | Cover, Header & Footprint       |             |              |       |          |
 |  2   |  Titles & Index     |             |              |       |          |
 |  3   |  Quotes use     |             |              |       |          |
-|  4   | Misspellings       |             |              |       |          |
+|  4   |Misspellings | Use of the orthographic tools, use of a clear & professional writing style |Several spelling errors|No misspellings. Minor punctuation mistakes. Short and clear sentences | No errors, good use of punctuation.Short and clear sentences. |
 |  5   |   Document structure    |             |              |       |          |
 |  6   |   Document format (italics, bold, lists, text size ...)    |             |              |       |          |
 |  7   |   Bibliography    |             |              |       |          |
