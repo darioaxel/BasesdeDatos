@@ -58,15 +58,16 @@ The following rubrics are associated to the values from 0 to 4 on:
 | 3, 4| Advanced use|
 
 ## a. Documentation Format Rubric
+> 1.5 POINTS
 
 | Item | Topic | Description | Unacceptable | Basic | Advanced |
 |------|-------|-------------|--------------|-------|----------|
 |  1   |Cover, Header & Footprint | Basic documentation style for a project | Poor cover, no page number at the foot, no header with the title of the project, no student names, too big header or footers, ... | There is a cover with a basic format, the header and footers are fine but basic also  | Beautifull cover with professional design, headers and footers also professional |
-|  2   |Titles & Index |             |              |       |          |
-|  3   |Quotes use | Quoting from the bibliography using APA style    | Wrong quote use, without APA style, from documents not included in the bibliography|Use of the APA style correctly, may not be perfect or any quotes style wrong | Extended use of quotes as help to introduce the theory. No style errors. |
+|  2   |Titles & Index | Index with links, use of the titles for a better documentation | No index or it doesn't include all the titles, the links does not work | Index is included but text font could make it hard to read. All links work | Correct index with linked access to all titles, titles and subtitles use is professional |
+|  3   |Quotes use | Quoting from the bibliography using APA style | Wrong quote use, without APA style, from documents not included in the bibliography|Use of the APA style correctly, may not be perfect or any quotes style wrong | Extended use of quotes as help to introduce the theory. No style errors. |
 |  4   |Misspellings | Use of the orthographic tools, use of a clear & professional writing style |Several spelling errors|No misspellings. Minor punctuation mistakes. Short and clear sentences | No errors, good use of punctuation.Short and clear sentences. |
-|  5   |   Document structure    |             |              |       |          |
-|  6   |   Document format (italics, bold, lists, text size ...)    |             |              |       |          |
+|  5   | Document structure |             |              |       |          |
+|  6   | Document format (italics, bold, lists, text size ...) |             |              |       |          |
 |  7   |   Bibliography    |             |              |       |          |
 |  8   |  Plagiarism     |             |              |       |
 |
@@ -75,18 +76,47 @@ The following rubrics are associated to the values from 0 to 4 on:
 
 
 
-## b. Project Documentation  
+## b. Project Documentation 
+> 5.5 POINTS 
 
 | Item | Topic | Description | Unacceptable | Basic | Advanced |
 |------|-------|-------------|--------------|-------|----------|
+|      |  Introduction     |             |              |       |          |
+|      |  Abstract    |             |              |       |          |
+|      |  State of the art      |             |              |       |          |
+|      |  E-R Diagram     |             |              |       |          |
+|      | E-R to Tables      |             |              |       |          |
+|      | Tables Normalization      |             |              |       |          |
+|      |  SQL Queries     |             |              |       |          |
+|      | Users & Roles      |             |              |       |          |
+|      | Views      |             |              |       |          |
+|      | Triggers      |             |              |       |          |
+|      | Functions      |             |              |       |          |
+|      |       |             |              |       |          |
+|      |       |             |              |       |          |
+|      |       |             |              |       |          |
+|      |       |             |              |       |          |
+|      |       |             |              |       |          |
+|      |       |             |              |       |          |
+|      |       |             |              |       |          |
 |      |       |             |              |       |          |
 |      |       |             |              |       |          |
 |      |       |             |              |       |          |
 
 ## c. Presentation Rubric 
 
+> 3 POINTS
+
 | Item | Topic | Description | Unacceptable | Basic | Advanced |
 |------|-------|-------------|--------------|-------|----------|
-|      |       |             |              |       |          |
-|      |       |             |              |       |          |
-|      |       |             |              |       |          |
+|  1    |Slides |             |              |       |          |
+|  2   |Time sharing   |             |              |       |          |
+|  3 | Explanation quality |             |              |       |          |
+|  4  | Examples |             |              |       |          |
+|  5  | Scheduled time  |             |              |       |          |
+|  6  | Questions |             |              |       |          |
+
+
+
+
+
