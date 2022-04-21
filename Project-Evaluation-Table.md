@@ -30,7 +30,7 @@
  * Are the entities of the diagram enough explained?
  * Is the E/R Diagram correct?
 
-## 2.4  E-R to TABLES
+## 2.4  E-R to Tables
 
 * Are all the tables of the project normalized?  
 * Does the documentation include examples of how to transform relation into tables?
@@ -41,11 +41,11 @@
     * Explanations of additional constraints and / or triggers
     * Additional explanation of major views & procs that touch the table, if they're not well documented already.
 
-### SQL Queries
+## 2.5 SQL Queries
  * Are the different scenarios of work for the users explained?
  * For each scenario/view the users would need, are some of the queries created incluing also an example of its results?
 
-### USERS & ROLE
+## 2.6 UsersS & Role
 
 # RUBRICS
 
@@ -66,10 +66,10 @@ The following rubrics are associated to the values from 0 to 4 on:
 |  2   |Titles & Index | Index with links, use of the titles for a better documentation | No index or it doesn't include all the titles, the links does not work | Index is included but text font could make it hard to read. All links work | Correct index with linked access to all titles, titles and subtitles use is professional |
 |  3   |Quotes use | Quoting from the bibliography using APA style | Wrong quote use, without APA style, from documents not included in the bibliography|Use of the APA style correctly, may not be perfect or any quotes style wrong | Extended use of quotes as help to introduce the theory. No style errors. |
 |  4   |Misspellings | Use of the orthographic tools, use of a clear & professional writing style |Several spelling errors|No misspellings. Minor punctuation mistakes. Short and clear sentences | No errors, good use of punctuation.Short and clear sentences. |
-|  5   | Document structure |             |              |       |          |
-|  6   | Document format (italics, bold, lists, text size ...) |             |              |       |          |
-|  7   |   Bibliography    |             |              |       |          |
-|  8   |  Plagiarism     |             |              |       |
+|  5   | Document structure | The document includes all the items| Not all points are done and/or some of them are just sketches without a proper work.| All points are done but some of them need a deeper work|All points, including Conclusions and introduction and really worked and completed |
+|  6   | Document format (italics, bold, lists, text size ...) | Format quality | The document use different list systems, there is no font continuity in texts. | Some minor mistakes. No more than 2 or 3 | Advanced use of the formatting in the document. Include advanced tables, fonts for a better reading, etc. |
+|  7   | Bibliography | List of books/texts referenced and quoted in the project.| Some quotes are not referenced using APA, the id and bibliography doesn't match in some cases.   | Minimal mistakes in APA quotes      |No mistakes, the APA use is full and include no just books, but other fonts. |
+|  8   | Plagiarism | Use copy/paste from other texts without quoting  | There are texts copy-pasted  | | There are no copy/pasted texts without a quote
 |
 
 
