@@ -45,7 +45,7 @@
  * Are the different scenarios of work for the users explained?
  * For each scenario/view the users would need, are some of the queries created incluing also an example of its results?
 
-## 2.6 UsersS & Role
+## 2.6 Users & Role
 
 # RUBRICS
 
@@ -79,19 +79,19 @@ The following rubrics are associated to the values from 0 to 4 on:
 ## b. Project Documentation 
 > 5.5 POINTS 
 
-| Item | Topic | Description | Unacceptable | Basic | Advanced |
-|------|-------|-------------|--------------|-------|----------|
-|      |  Introduction     |             |              |       |          |
+| Item | Topic | Description | Unacceptable | Basic | Advanced | Value |
+|------|-------|-------------|--------------|-------|----------|-----|
+|      |  Introduction     |             |              |       |          | |
 |      |  Abstract    |             |              |       |          |
-|      |  State of the art      |             |              |       |          |
-|      |  E-R Diagram     |             |              |       |          |
-|      | E-R to Tables      |             |              |       |          |
-|      | Tables Normalization      |             |              |       |          |
-|      |  SQL Queries     |             |              |       |          |
-|      | Users & Roles      |             |              |       |          |
-|      | Views      |             |              |       |          |
-|      | Triggers      |             |              |       |          |
-|      | Functions      |             |              |       |          |
+|      |  State of the art      |             |              |       |          ||
+|      |  E-R Diagram     |             |              |       |          ||
+|      | E-R to Tables      |             |              |       |          ||
+|      | Tables Normalization      |             |              |       |          ||
+|      |  SQL Queries     |             |              |       |          ||
+|      | Users & Roles      |             |              |       |          ||
+|      | Views      |             |              |       |          ||
+|      | Triggers      |             |              |       |          ||
+|      | Functions      |             |              |       |          ||
 |      |       |             |              |       |          |
 |      |       |             |              |       |          |
 |      |       |             |              |       |          |
