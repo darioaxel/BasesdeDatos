@@ -19,10 +19,10 @@
  *  
 
 
-## 2.2 DBs problems and solutions
- * Do the project include a list of problems the company needed to solve in the past?
- * Do the project specify how the problems could be solved by using a DB?
- * Is the solution to the problems based in the characteristics that a RDB have?
+### 2.1.2 DBs problems and solutions
+ * Does the project include a list of problems the company needed to solve in the past?
+ * Does the project specify how the problems could be solved by using a DB?
+ * Is the solution to the problems based in the characteristics that a RDB has?
  * 
 
 
@@ -84,24 +84,14 @@ The following rubrics are associated to the values from 0 to 4 on:
 |   1   |  Introduction  | Structure & points worked  | The introduction is smaller than 3/4 of a sheet. It doesn't include a pair of lines explaining lightly what each point of the document includes neither do the following: Briefly describe the motivation for the research. Describe the topic and scope of your research, Explain the practical relevance of your research, Explain the scientific situation related to your topic. |The introduction is long enough to introduce many, but not all, the points list before  | All the points are included briefly but clearly explained  |
 |  2    |  Abstract    |   Brief introtroduction    |  Longer than 4 lines, with too many detaills and not giving a clear idea of the project and its relevance | Small enough but not precise the idea clearly  | Good and compact introduction to the project and its relevance |
 |  3    |  State of the art | Background & Theory | It doesn't include a quoted style documentation background including the main points of the module(Relational DBs,ER Diagrams creation and elements, Tables, Normalizations, etc ) | The documentation tackles all the points but there are some minor failures | All points are included and tackled using many bibliographic quotes and references. It also include diverse graphics to help the reader and some clear examples|
-|  4    |  E-R Diagram   |  Entity Relation Diagram           |              |       |          ||
-|      | E-R to Tables      |             |              |       |          ||
-|      | Tables Normalization      |             |              |       |          ||
-|      |  SQL Queries     |             |              |       |          ||
-|      | Users & Roles      |             |              |       |          ||
-|      | Views      |             |              |       |          ||
-|      | Triggers      |             |              |       |          ||
-|      | Functions      |             |              |       |          ||
-|      |       |             |              |       |          |
-|      |       |             |              |       |          |
-|      |       |             |              |       |          |
-|      |       |             |              |       |          |
-|      |       |             |              |       |          |
-|      |       |             |              |       |          |
-|      |       |             |              |       |          |
-|      |       |             |              |       |          |
-|      |       |             |              |       |          |
-|      |       |             |              |       |          |
+|  4    |  E-R Diagram   |  Entity Relation Diagram | The entities are not enough explained nor the relations and the index inside them. The diagram is wrong and poorly developed | The ER Diagram is correct, most of the entities are explained but the reader still feel confused about some details or concepts | The diagraman is really detailed, include many explanations to help the reader understand every entity and relation.  | 
+| 5     | E-R to Tables | Tranformation ER-D to Tables  | The process is wrong. There are several errors, no explanation or examples. | The process is explained and detailed but I have some minor mistakes          | The process is clear, explained and detailed. The reader easily understood how the process was done and why every decision was taken |
+|  6    | Tables Normalization  | Use of the normalization forms |  Several Normalization errors.  | No normalization error, but the process doesn't get untill 3NF in some cases without explanations. |  The process is clear, explained and detailed. The reader easily understood how the process was done and why every decision was taken        ||
+|   7   |  SQL Queries  |             |              |       |          ||
+|   8   | Users & Roles      |             |              |       |          ||
+|   9   | Views      |             |              |       |          ||
+|   10   | Triggers      |             |              |       |  The process is clear, explained and detailed. The reader easily understood how the needs of each trigger how do the were done and why every decision was taken ||
+|   11   | Functions & Procedures      |             |              |       |  The process is clear, explained and detailed. The reader easily understood how the needs of each function or procedure, how do the were done and why every decision was taken | 
 
 ## c. Presentation Rubric 
 
