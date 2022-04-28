@@ -81,10 +81,10 @@ The following rubrics are associated to the values from 0 to 4 on:
 
 | Item | Topic | Description | Unacceptable | Basic | Advanced |
 |------|-------|-------------|--------------|-------|----------|
-|      |  Introduction  | Structure & points worked  | The introduction is smaller than 3/4 of a sheet. It doesn't include a pair of lines explaining lightly what each point of the document includes neither do the following: Briefly describe the motivation for the research. Describe the topic and scope of your research, Explain the practical relevance of your research, Explain the scientific situation related to your topic. |The introduction is long enough to introduce many, but not all, the points list before  | All the points are included briefly but clearly explained  |
-|      |  Abstract    |   Brief introtroduction    |  Longer than 4 lines, with too many detaills and not giving a clear idea of the project and its relevance | Small enough but not precise the idea clearly  | Good and compact introduction to the project and its relevance |
-|      |  State of the art |             |              |       |          ||
-|      |  E-R Diagram   |             |              |       |          ||
+|   1   |  Introduction  | Structure & points worked  | The introduction is smaller than 3/4 of a sheet. It doesn't include a pair of lines explaining lightly what each point of the document includes neither do the following: Briefly describe the motivation for the research. Describe the topic and scope of your research, Explain the practical relevance of your research, Explain the scientific situation related to your topic. |The introduction is long enough to introduce many, but not all, the points list before  | All the points are included briefly but clearly explained  |
+|  2    |  Abstract    |   Brief introtroduction    |  Longer than 4 lines, with too many detaills and not giving a clear idea of the project and its relevance | Small enough but not precise the idea clearly  | Good and compact introduction to the project and its relevance |
+|  3    |  State of the art | Background & Theory | It doesn't include a quoted style documentation background including the main points of the module(Relational DBs,ER Diagrams creation and elements, Tables, Normalizations, etc ) | The documentation tackles all the points but there are some minor failures | All points are included and tackled using many bibliographic quotes and references. It also include diverse graphics to help the reader and some clear examples|
+|  4    |  E-R Diagram   |  Entity Relation Diagram           |              |       |          ||
 |      | E-R to Tables      |             |              |       |          ||
 |      | Tables Normalization      |             |              |       |          ||
 |      |  SQL Queries     |             |              |       |          ||
