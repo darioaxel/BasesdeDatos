@@ -81,7 +81,8 @@ The following rubrics are associated to the values from 0 to 4 on:
 
 | Item | Topic | Description | Unacceptable | Basic | Advanced |
 |------|-------|-------------|--------------|-------|----------|
-|      |  Introduction     |             |              |       |          |
+|      |  Introduction  | Structure & points worked  | The introduction is smaller than 3/4 of a sheet. It doesn't include a pair of lines explaining lightly what each point of the document includes neither do the following: Briefly describe the motivation for the research. Describe the topic and scope of your research, Explain the practical relevance of your research, Explain the scientific situation related to your topic.
+ |  The introduction is long enough to introduce many, but not all, the points list before    | All the points are included briefly but clearly explained         |
 |      |  Abstract    |             |              |       |          |
 |      |  State of the art      |             |              |       |          |
 |      |  E-R Diagram     |             |              |       |          |
