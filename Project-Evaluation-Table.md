@@ -89,7 +89,7 @@ The following rubrics are associated to the values from 0 to 4 on:
 |  6    | Tables Normalization  | Use of the normalization forms |  Several Normalization errors.  | No normalization error, but the process doesn't get untill 3NF in some cases without explanations. |  The process is clear, explained and detailed. The reader easily understood how the process was done and why every decision was taken        ||
 |   7   |  SQL Queries  | Queries to fetch the data for the users | No user/ui description defined. Not enough SQL to provide the users the minimum data need for their work. SQL too simple. | The user/ui needs are basically descripted and there are some SQL associated. At least 12 queries, some of them with several tables and relations  | At least 12 complex queries to provide data for the really descripted user/ui needs  |
 |   8   | Users & Roles | users permissions grant|Some users and roles created but poorly described and without a justification for their use | There are some users and role created, but not really good justification for them   | Users and Roles are added as a result of a technical need, the role grant expecific permissions to the users for different actions    ||
-|   9   | Views |   | There are no views |  No views are included.   | Some views are included but it use is not specified to a user based on his needs. The views are simple     | There are some views that include several tables and complex results. The views are based on the needs of users. |
+|   9   | Views |  |  No views are included.   | Some views are included but it use is not specified to a user based on his needs. The views are simple     | There are some views that include several tables and complex results. The views are based on the needs of users. |
 |   10   | Triggers, Functions & Procedures  |             |   There are no functions or triggers   | There are functions/triggers but no explaination why the project need them      |  The process is clear, explained and detailed. The reader easily understood how the needs of each function or procedure, how do the were done and why every decision was taken | 
 
 ## c. Presentation Rubric 
@@ -98,12 +98,12 @@ The following rubrics are associated to the values from 0 to 4 on:
 
 | Item | Topic | Description | Unacceptable | Basic | Advanced |
 |------|-------|-------------|--------------|-------|----------|
-|  1    |Slides |             |              |       |          |
-|  2   |Time sharing   |             |              |       |          |
-|  3 | Explanation quality |             |              |       |          |
-|  4  | Examples |             |              |       |          |
-|  5  | Scheduled time  |             |              |       |          |
-|  6  | Questions |             |              |       |          |
+|  1    |Slides | Slides format  | Slides colors and fonts make them unreadable. Too many information make.         |   Information clear, enough but some problems with the fonts    |  Great presentation, full of details. Fonts are clear. Information is enough with main ideas.       |
+|  2   |Time sharing   |             | The presentation is done just by one of the two members, the other one did nothing.  | One of the members takes all the hard things and time, the other just a few minutes   | Both members share the same time of explanation. |
+|  3 | Explanation quality |             |   The speakers just read the same text from the slides  | The speakers read their texts without following or making references to the slides used.       | The presentation is clear, direct and using the slides as a base for what they speak. The speaker just use notes, and don't read a text.  |
+|  4  | Examples |             | No examples, just text.   |  One or two minor examples.  | Presentation includes several important examples to make clear each part of the project    |
+|  5  | Scheduled time  |             | Presentation time is less than 5min per person or more than 17 min total |       |   Presentation between 13 and 15 min total       |
+|  6  | Questions |             |   No one seem to know a thing about what people ask | Bot members answer the questions        | Answers are clear, use examples and both members participate   |
 
 
 
