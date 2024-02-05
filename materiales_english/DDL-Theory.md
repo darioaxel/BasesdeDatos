@@ -84,17 +84,16 @@ The basic syntax for creating a table in SQL is as follows:
 >  column_name_n  datatype [NULL | NOT NULL] );  
 
 Here is an example to illustrate database table creation using the CREATE command.
+'''sql
+CREATE TABLE public.customer_details  (  
+ customer_id character varying NOT NULL,  
+ customer_name character varying(255) NOT NULL,  
+ location character varying(255) NOT NULL,  
+ amount_spent numeric NOT NULL,  
+ order_id character varying NOT NULL  
+);  
+'''
 
-> CREATE TABLE public.customer_details  
-> (  
-> customer_id character varying NOT NULL,  
-> customer_name character varying(255) NOT NULL,  
-> location character varying(255) NOT NULL,  
-> amount_spent numeric NOT NULL,  
-> order_id character varying NOT NULL  
-> );  
-
-SQL DDL Commands output 2
 
 ### 2. ALTER
 ---
