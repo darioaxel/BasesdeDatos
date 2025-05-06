@@ -56,3 +56,29 @@ INSERT INTO detalle_pedido (codigo_pedido, codigo_producto, cantidad, precio_uni
 (92024, 'AR-006', 2, 8, 2),
 (102024, '11679', 3, 14, 1),
 (102024, 'AR-004', 4, 10, 2);
+
+INSERT INTO pedido (
+  codigo_pedido, 
+  fecha_pedido, 
+  fecha_esperada, 
+  fecha_entrega, 
+  estado, 
+  comentarios, 
+  codigo_cliente
+) VALUES (
+  6666, -- Asumo que este código no existe (ajustar según necesidad)
+  '2025-03-01', 
+  '2025-03-10', 
+  NULL, 
+  'Pendiente', 
+  'Pedido especial de 35,000€', 
+  15
+);
+-- Detalle 1: 11679 - Sierra de Poda (precio 14€)
+INSERT INTO detalle_pedido VALUES (6666, '11679', 1000, 14, 1); -- 1000 * 14 = 14,000€
+-- Detalle 2: 21636 - Pala (precio 14€)
+INSERT INTO detalle_pedido VALUES (6666, '21636', 1000, 14, 2); -- 1000 * 14 = 14,000€
+-- Detalle 3: AR-001 - Ajedrea (precio 1€)
+INSERT INTO detalle_pedido VALUES (6666, 'AR-001', 7000, 1, 3); -- 7000 * 1 = 7,000€
+
+INSERT INTO pago VALUES (15,'PayPal','ak-std-000016','2025-03-15',2081);
